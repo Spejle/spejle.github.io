@@ -1,3 +1,7 @@
+        
+    </script>
+</body>
+</html>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,27 +9,47 @@
     <style>
         body {
             background-color: #ffffff; /* default background color */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        
+        .link-box {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #252525;
+            background-color: #f0f0f0;
         }
     </style>
 </head>
 <body>
     <h1>Welcome to My GitHub Page!</h1>
-    <p>This is the index file for my GitHub Pages site.</p>
+    <p>This is Spejles web page.</p>
+    <p>As you can see its not done but you can still check links under</p>
     
     <label for="background-color">Choose Background Color:</label>
     <select id="background-color" onchange="changeBackgroundColor()">
         <option value="#ffffff">Light Mode</option>
-        <option value="#000000">Dark Mode</option>
-        <option value="catgirl.gif">Funny (Catgirl GIF)</option>
+        <option value="#252525">Dark Mode</option>
+        <option value="catgirl.gif">Funny</option>
     </select>
     
-    <a href="page1.html"><button>Go to Page 1</button></a>
-    <a href="page2.html"><button>Go to Page 2</button></a>
+    <div class="link-box">
+        <a href="https://github.com/Spejle">GitHub Profile</a>
+    </div>
+    
+    <div class="link-box">
+        <a href="page2.html">Page 2</a>
+    </div>
     
     <script>
         function changeBackgroundColor() {
             var color = document.getElementById("background-color").value;
-            if (color === "catgirl.gif") {
+            if (color === "veibae-vtuber.gif") {
                 document.body.style.backgroundImage = "url('veibae-vtuber.gif')";
                 document.body.style.backgroundRepeat = "no-repeat";
                 document.body.style.backgroundSize = "cover";
@@ -33,7 +57,61 @@
                 document.body.style.backgroundImage = "none";
                 document.body.style.backgroundColor = color;
             }
-        }
+    if (color === "#252525") {
+        document.body.style.backgroundImage = "none";
+        document.body.style.backgroundColor = color;
+        document.body.style.color = "#ffffff"; // Set text color to white
+    } else {
+        document.body.style.backgroundImage = "none";
+        document.body.style.backgroundColor = color;
+        document.body.style.color = "#000000"; // Set text color to black
+    }
+}
+
     </script>
-</body>
-</html>
+        <script>
+            window.addEventListener('DOMContentLoaded', function() {
+                var cookieValue = getCookie('backgroundColor'),
+                    btns = document.querySelectorAll('.color-btn');
+
+                if (cookieValue) {
+                    setBackgroundColor(cookieValue);
+                }
+
+                Array.from(btns).forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        var color = this.getAttribute('data-color');
+                        setBackgroundColor(color);
+                    });
+                });
+            });
+
+            function setBackgroundColor(color) {
+                document.body.style.backgroundColor = color;
+                setCookie('backgroundColor', color);
+
+                if (color === "#252525") {
+                    document.body.style.color = "#ffffff"; // Set text color to white
+                } else {
+                    document.body.style.color = "#000000"; // Set text color to black
+                }
+            }
+
+            function getCookie(name) {
+                var cookies = document.cookie.split(';'),
+                    cookie = cookies.find(function(str) { return str.indexOf(name + '=') === 0; });
+                if (cookie) {
+                    return cookie.split('=')[1];
+                }
+                return null;
+            }
+
+            function setCookie(name, value) {
+                document.cookie = name + '=' + value;
+            }
+        </script>
+
+
+<button class="color-btn" data-color="#ffffff">Light Mode</button>
+<button class="color-btn" data-color="#252525">Dark Mode</button>
+            <button class="color-btn" data-color="catgirl.gif">Funny</button>
