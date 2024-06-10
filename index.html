@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My GitHub Page</title>
+    <style>
+        body {
+            background-color: #ffffff; /* default background color */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My GitHub Page!</h1>
+    <p>This is the index file for my GitHub Pages site.</p>
+    
+    <label for="background-color">Choose Background Color:</label>
+    <select id="background-color" onchange="changeBackgroundColor()">
+        <option value="#ffffff">Light Mode</option>
+        <option value="#000000">Dark Mode</option>
+        <option value="catgirl.gif">Funny (Catgirl GIF)</option>
+    </select>
+    
+    <a href="page1.html"><button>Go to Page 1</button></a>
+    <a href="page2.html"><button>Go to Page 2</button></a>
+    
+    <script>
+        function changeBackgroundColor() {
+            var color = document.getElementById("background-color").value;
+            if (color === "catgirl.gif") {
+                document.body.style.backgroundImage = "url('catgirl.gif')";
+                document.body.style.backgroundRepeat = "no-repeat";
+                document.body.style.backgroundSize = "cover";
+            } else {
+                document.body.style.backgroundImage = "none";
+                document.body.style.backgroundColor = color;
+            }
+        }
+    </script>
+</body>
+</html>
