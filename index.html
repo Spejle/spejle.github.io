@@ -43,7 +43,7 @@
     </div>
     
     <div class="link-box">
-        <a href="page2.html">Page 2</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA%3D">Discord</a>
     </div>
     
     <script>
@@ -111,3 +111,31 @@
             }
         </script>
 
+        <div id="gif-container" style="display: none;">
+            <img id="funny-gif" src="veibae-vtuber.gif" alt="Funny GIF">
+        </div>
+
+        <script>
+            function changeBackgroundColor() {
+                var color = document.getElementById("background-color").value;
+                if (color === "veibae-vtuber.gif") {
+                    document.body.style.backgroundImage = "url('veibae-vtuber.gif')";
+                    document.body.style.backgroundRepeat = "no-repeat";
+                    document.body.style.backgroundSize = "cover";
+                    document.getElementById("gif-container").style.display = "block";
+                } else {
+                    document.body.style.backgroundImage = "none";
+                    document.body.style.backgroundColor = color;
+                    document.getElementById("gif-container").style.display = "none";
+                }
+                if (color === "#252525") {
+                    document.body.style.backgroundImage = "none";
+                    document.body.style.backgroundColor = color;
+                    document.body.style.color = "#ffffff"; // Set text color to white
+                } else {
+                    document.body.style.backgroundImage = "none";
+                    document.body.style.backgroundColor = color;
+                    document.body.style.color = "#000000"; // Set text color to black
+                }
+            }
+        </script>
