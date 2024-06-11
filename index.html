@@ -5,8 +5,8 @@
     <style>
         /* Default theme */
         body {
-            background-color: white;
-            color: black;
+            background-color: #333333;
+            color: #f5f5f5;
         }
     
         /* Theme 1 */
@@ -17,25 +17,20 @@
     
         /* Theme 2 */
         body.theme2 {
-            background-color: #333333;
-            color: #f5f5f5;
-        }
-    
-        /* Theme 3 */
-        body.theme3 {
-            background-image:url("spejle.github.io/catgirldance.gif") ;
-        }
-    
-        /* Theme 4 */
-        body.theme4 {
             background-color: #0099cc;
             color: #333333;
         }
-    
-        /* Theme 5 */
-        body.theme5 {
+        
+        /* Theme 3 */
+        body.theme3 {
             background-color: #470047;
             color: #8635ac;
+        }
+        
+        /* Theme 5 */
+         body.theme5 {
+            background-image:url("https://spejle.github.io/catgirldance.gif");
+            color:black;
         }
         
         @keyframes scrollDown {
@@ -54,12 +49,11 @@
     
     <!-- Theme changing options -->
     <select id="themeSelector" onchange="changeTheme()">
-        <option value="default">Default</option>
-        <option value="theme1">Theme 1</option>
-        <option value="theme2">Theme 2</option>
-        <option value="theme3">Theme 3</option>
-        <option value="theme4">Theme 4</option>
-        <option value="theme5">Theme 5</option>
+        <option value="theme0">Dark</option>
+        <option value="theme1">Light</option>
+        <option value="theme2">Blue</option>
+        <option value="theme3">Purpur</option>
+        <option value="theme5">Peak</option>
     </select>
 
     
