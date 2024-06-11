@@ -61,8 +61,16 @@
         function changeTheme() {
             var theme = document.getElementById("themeSelector").value;
             document.body.className = theme;
+            
+            var audio = document.getElementsByTagName("audio")[0];
+            
+            if (theme === "theme5") {
+                audio.play();
+            } else {
+                audio.pause();
+            }
         }
     </script>
 </body>
 </html>
-
+<audio src="spejle.github.io/PrivatePureLoveTrain.mp3" controls autoplay></audio>
