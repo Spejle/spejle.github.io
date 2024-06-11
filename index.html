@@ -1,141 +1,74 @@
-        
-    </script>
-</body>
-</html>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My GitHub Page</title>
+    <title>My Page</title>
     <style>
+        /* Default theme */
         body {
-            background-color: #ffffff; /* default background color */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
+            background-color: white;
+            color: black;
+        }
+    
+        /* Theme 1 */
+        body.theme1 {
+            background-color: #f5f5f5;
+            color: #333333;
+        }
+    
+        /* Theme 2 */
+        body.theme2 {
+            background-color: #333333;
+            color: #f5f5f5;
+        }
+    
+        /* Theme 3 */
+        body.theme3 {
+            background-image:url("spejle.github.io/catgirldance.gif") ;
+        }
+    
+        /* Theme 4 */
+        body.theme4 {
+            background-color: #0099cc;
+            color: #333333;
+        }
+    
+        /* Theme 5 */
+        body.theme5 {
+            background-color: #470047;
+            color: #8635ac;
         }
         
-        .link-box {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid #252525;
-            background-color: #f0f0f0;
+        @keyframes scrollDown {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
         }
+    </style>
     </style>
 </head>
 <body>
-    <h1>Welcome to My GitHub Page!</h1>
-    <p>This is Spejles web page.</p>
-    <p>As you can see its not done but you can still check links under</p>
+    <h1>Welcome to My Page</h1>
     
-    <label for="background-color">Choose Background Color:</label>
-    <select id="background-color" onchange="changeBackgroundColor()">
-        <option value="#ffffff">Light Mode</option>
-        <option value="#252525">Dark Mode</option>
-        <option value="veibae-vtuber.gif">Funny</option>
+    <!-- Theme changing options -->
+    <select id="themeSelector" onchange="changeTheme()">
+        <option value="default">Default</option>
+        <option value="theme1">Theme 1</option>
+        <option value="theme2">Theme 2</option>
+        <option value="theme3">Theme 3</option>
+        <option value="theme4">Theme 4</option>
+        <option value="theme5">Theme 5</option>
     </select>
-    
-    <div class="link-box">
-        <a href="https://github.com/Spejle">GitHub Profile</a>
-    </div>
-    
-    <div class="link-box">
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA%3D">Discord</a>
-    </div>
+
     
     <script>
-        function changeBackgroundColor() {
-            var color = document.getElementById("background-color").value;
-            if (color === "veibae-vtuber.gif") {
-                document.body.style.backgroundImage = "url('veibae-vtuber.gif')";
-                document.body.style.backgroundRepeat = "no-repeat";
-                document.body.style.backgroundSize = "cover";
-            } else {
-                document.body.style.backgroundImage = "none";
-                document.body.style.backgroundColor = color;
-            }
-    if (color === "#252525") {
-        document.body.style.backgroundImage = "none";
-        document.body.style.backgroundColor = color;
-        document.body.style.color = "#ffffff"; // Set text color to white
-    } else {
-        document.body.style.backgroundImage = "none";
-        document.body.style.backgroundColor = color;
-        document.body.style.color = "#000000"; // Set text color to black
-    }
-}
-
+        function changeTheme() {
+            var theme = document.getElementById("themeSelector").value;
+            document.body.className = theme;
+        }
     </script>
-        <script>
-            window.addEventListener('DOMContentLoaded', function() {
-                var cookieValue = getCookie('backgroundColor'),
-                    btns = document.querySelectorAll('.color-btn');
+</body>
+</html>
 
-                if (cookieValue) {
-                    setBackgroundColor(cookieValue);
-                }
-
-                Array.from(btns).forEach(function(btn) {
-                    btn.addEventListener('click', function() {
-                        var color = this.getAttribute('data-color');
-                        setBackgroundColor(color);
-                    });
-                });
-            });
-
-            function setBackgroundColor(color) {
-                document.body.style.backgroundColor = color;
-                setCookie('backgroundColor', color);
-
-                if (color === "#252525") {
-                    document.body.style.color = "#ffffff"; // Set text color to white
-                } else {
-                    document.body.style.color = "#000000"; // Set text color to black
-                }
-            }
-
-            function getCookie(name) {
-                var cookies = document.cookie.split(';'),
-                    cookie = cookies.find(function(str) { return str.indexOf(name + '=') === 0; });
-                if (cookie) {
-                    return cookie.split('=')[1];
-                }
-                return null;
-            }
-
-            function setCookie(name, value) {
-                document.cookie = name + '=' + value;
-            }
-        </script>
-
-        <div id="gif-container" style="display: none;">
-            <img id="funny-gif" src="veibae-vtuber.gif" alt="Funny GIF">
-        </div>
-
-        <script>
-            function changeBackgroundColor() {
-                var color = document.getElementById("background-color").value;
-                if (color === "veibae-vtuber.gif") {
-                    document.body.style.backgroundImage = "url('veibae-vtuber.gif')";
-                    document.body.style.backgroundRepeat = "no-repeat";
-                    document.body.style.backgroundSize = "cover";
-                    document.getElementById("gif-container").style.display = "block";
-                } else {
-                    document.body.style.backgroundImage = "none";
-                    document.body.style.backgroundColor = color;
-                    document.getElementById("gif-container").style.display = "none";
-                }
-                if (color === "#252525") {
-                    document.body.style.backgroundImage = "none";
-                    document.body.style.backgroundColor = color;
-                    document.body.style.color = "#ffffff"; // Set text color to white
-                } else {
-                    document.body.style.backgroundImage = "none";
-                    document.body.style.backgroundColor = color;
-                    document.body.style.color = "#000000"; // Set text color to black
-                }
-            }
-        </script>
