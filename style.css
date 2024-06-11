@@ -1,0 +1,50 @@
+        /* Default theme */
+        body {
+            background-color: #333333;
+            color: #f5f5f5;
+
+            font-family: 'Archivo Black';font-size: 22px;
+        }
+
+        .drop {
+            background-color: #d641fc;
+            color: #f5f5f5;
+
+            border: 8px solid rgba(228, 131, 252, 0.753);
+            border-radius: 30px;
+            border
+        }
+    
+        /* Theme 1 */
+        body.theme1 {
+            background-color: #f5f5f5;
+            color: #333333;
+        }
+    
+        /* Theme 2 */
+        body.theme2 {
+            background-color: #0099cc;
+            color: #333333;
+        }
+        
+        /* Theme 3 */
+        body.theme3 {
+            background-color: #470047;
+            color: #8635ac;
+        }
+        
+        /* Theme 5 */
+        body.theme5 {
+            background-image:url("https://spejle.github.io/catgirldance.gif");
+            color:black;
+            background-size: 120ch;
+        }
+        
+        @keyframes scrollDown {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
