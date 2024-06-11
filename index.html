@@ -28,7 +28,7 @@
         }
         
         /* Theme 5 */
-         body.theme5 {
+        body.theme5 {
             background-image:url("https://spejle.github.io/catgirldance.gif");
             color:black;
         }
@@ -41,7 +41,6 @@
                 transform: translateY(100vh);
             }
         }
-    </style>
     </style>
 </head>
 <body>
@@ -56,21 +55,25 @@
         <option value="theme5">Peak</option>
     </select>
 
+    <!-- Audio player -->
+    <audio id="audioPlayer" controls>
+        <source src="https://spejle.github.io/privatepurelovetrain.aac" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     
     <script>
         function changeTheme() {
             var theme = document.getElementById("themeSelector").value;
             document.body.className = theme;
             
-            var audio = document.getElementsByTagName("audio")[0];
-            
+            // Show/hide audio player based on theme selection
+            var audioPlayer = document.getElementById("audioPlayer");
             if (theme === "theme5") {
-                audio.play();
+                audioPlayer.style.display = "block";
             } else {
-                audio.pause();
+                audioPlayer.style.display = "none";
             }
         }
     </script>
 </body>
 </html>
-<audio src="spejle.github.io/PrivatePureLoveTrain.mp3" controls autoplay></audio>
