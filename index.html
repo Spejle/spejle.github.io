@@ -5,38 +5,93 @@
 
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'>
-
-
 </head>
 <body>
-    <h1>Welcome to My Page</h1>
-    
-    <!-- Theme changing options -->
-    <select class="drop" id="themeSelector" onchange="changeTheme()">
-        <option value="theme0">Dark</option>
-        <option value="theme1">Light</option>
-        <option value="theme2">Blue</option>
-        <option value="theme3">Purpur</option>
-        <option value="theme5">Peak</option>
-    </select>
+    <div class="theme-selector-container">
+        <!-- Theme changing options -->
+        <select class="drop theme-selector" id="themeSelector" onchange="changeTheme()">
+            <option value="theme0">Dark</option>
+            <option value="theme1">Light</option>
+            <option value="theme2">Blue</option>
+            <option value="theme3">Neon</option>
+        </select>
+    </div>
 
-    <!-- Audio player -->
-    <audio id="audioPlayer" autoplay controls></audio>
-        <source src="https://spejle.github.io/privatepurelovetrain.aac" type="audio/mpeg">
-    </audio>
+    <h1>Spejle Page help.md</h1>
+    
+    <div class="scrollable"></div>
+    <p id="textToChange" style="border: 1px solid black; max-width: 500px;">Curently W.I.P.</p>
     
     <script>
         function changeTheme() {
             var theme = document.getElementById("themeSelector").value;
             document.body.className = theme;
-            
-            // Show/hide audio player based on theme selection
-            var audioPlayer = document.getElementById("audioPlayer");
-            if (theme === "theme5") {
-                audioPlayer.style.display = "block";
-            } else {
-                audioPlayer.style.display = "none";
+            reloadTextColors(theme);
+            // Save theme option in a cookie
+            document.cookie = "theme=" + theme + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+        }
+    
+        function reloadTextColors(theme) {
+            var textToChange = document.getElementById("textToChange");
+            if (theme === "theme0") {
+                textToChange.style.color = "#f5f5f5";
+            } else if (theme === "theme1") {
+                textToChange.style.color = "black";
+            } else if (theme === "theme2") {
+                textToChange.style.color = "blue";
+            } else if (theme === "theme3") {
+                textToChange.style.color = "#0abdc6";
             }
+        }
+    
+        var textToChange = document.getElementById("textToChange");
+        textToChange.addEventListener("mouseover", function() {
+            var theme = document.getElementById("themeSelector").value;
+            document.body.className = theme;
+            if (theme === "theme0") {
+                textToChange.style.color = "#f5f5f5";
+            } else if (theme === "theme1") {
+                textToChange.style.color = "black";
+            } else if (theme === "theme2") {
+                textToChange.style.color = "blue";
+            } else if (theme === "theme3") {
+                textToChange.style.color = "#0abdc6";
+            }
+        });
+    
+        textToChange.addEventListener("mouseout", function() {
+            var theme = document.getElementById("themeSelector").value;
+            document.body.className = theme;
+            if (theme === "theme0") {
+                textToChange.style.color = "black";
+            } else if (theme === "theme1") {
+                textToChange.style.color = "#333333";
+            } else if (theme === "theme2") {
+                textToChange.style.color = "#333333";
+            } else if (theme === "theme3") {
+                textToChange.style.color = "#711c91";
+            }
+        });
+        
+        // Load theme option from cookie on page load
+        window.addEventListener("load", function() {
+            var theme = getCookie("theme");
+            if (theme) {
+                document.getElementById("themeSelector").value = theme;
+                changeTheme();
+            }
+        });
+        
+        // Helper function to get cookie value
+        function getCookie(name) {
+            var cookies = document.cookie.split("; ");
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].split("=");
+                if (cookie[0] === name) {
+                    return cookie[1];
+                }
+            }
+            return "";
         }
     </script>
 </body>
