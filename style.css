@@ -66,5 +66,40 @@
         }
             */
 
+        .swing {
+            animation: swingAnimation .5s;
+        }
+
+        p {
+            animation: flyInAnimation 1s;
+        }
+
+        h1 {
+            animation: flyInAnimation 1s;
+        }
+
+        @keyframes swingAnimation {
+            0% {
+            transform: rotate(0deg);
+            }
+
+            100% {
+            transform: rotate(360deg);
+            }
+        }
+
+        
+        @keyframes flyInAnimation {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
 
         
