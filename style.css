@@ -4,30 +4,33 @@
             color: #000000;
             text-align: center;
             font-family: 'Archivo Black';font-size: 22px;
+            border-left:#000000  20px;
+            border-right: #ffffff 20px;
         }
         .drop {
-            background-color: #ffffff;
-            color: #000000;
-            border: 6px solid rgb(0, 0, 0);
+            background-color: #000000;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            border-color: #000000;
             border-radius: 20px;
         }
             /* Theme 1 */
         body.theme1 .drop {
-            background-color: #000000;
-            color: #ffffff;
-            border-color: #333333;
+            background-color: #ffffff;
+            color: #000000;
+            border-color: #000000;
         }
         /* Theme 2 */
         body.theme2 .drop {
-            background-color: #0099cc;
-            color: #333333;
-            border-color: #333333;
+            background-color: #017ea8;
+            color: #000000;
+            border-color: #000000;
         }
         /* Theme 3 */
         body.theme3 .drop {
-            background-color: #8a038a;
-            color: #000000;
-            border-color: #8635ac;
+            background-color: #091833;
+            color: #0abdc6;
+            border-color: #711c91;
         }
 /*
         body.theme5 .drop {
