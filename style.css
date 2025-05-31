@@ -102,4 +102,18 @@
         }
 
 
-        
+/* Theme 4 - Soviet */
+body.theme4 {
+    background-color: #a40000; /* Fallback red */
+    color: #ffd700;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_the_Soviet_Union.svg/1920px-Flag_of_the_Soviet_Union.svg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body.theme4 .drop {
+    background-color: #ffd700;
+    color: #a40000;
+    border-color: #8b0000;
+}
